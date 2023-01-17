@@ -41,6 +41,23 @@ addMushroomButton.addEventListener('click', () => {
 });
 
 addFriendButton.addEventListener('click', () => {
+    const friendName = friendInputEl.value;
+
+    if (!friendName) {
+        return;
+    }
+
+    const newFriend = {
+        name: friendName,
+        satisfaction: Math.ceil(Math.random() * 3),
+    };
+
+    friendData.push(newFriend);
+
+    friendInputEl.value = '';
+
+    displayFriends();
+
     // get the name from the input
     // create a new friend object
     // push it into the friends state array, passed in as an argument
@@ -56,7 +73,14 @@ function displayFriends() {
         // use renderFriend to make a friendEl
         const friendEl = renderFriend(friend);
 
-        friend.addEventListener('click', () => {});
+        friendEl.addEventListener('click', () => {
+            if (friend.satisfaction < 3) {
+                friend.satisfaction++;
+                mushroomCount--;
+            }
+            displayFriends();
+            displayMushrooms();
+        });
 
         // this is a clickable list, so . . .
         //     add an event listener to each friend
