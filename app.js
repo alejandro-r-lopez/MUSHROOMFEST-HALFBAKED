@@ -45,6 +45,7 @@ addFriendButton.addEventListener('click', () => {
     const friendName = friendInputEl.value;
 
     if (!friendName) {
+        friendInputEl.value = 'George';
         return;
     }
 
