@@ -71,7 +71,7 @@ function displayFriends() {
                 friend.satisfaction++;
                 mushroomCount--;
             } else {
-                alert('You are out of mushrooms, you must forage for more');
+                alert('You are out of mushrooms, you must forage for more!');
             }
             displayFriends();
             displayMushrooms();
