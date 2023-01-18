@@ -27,6 +27,19 @@ const friendData = [
     },
 ];
 
+const defaultFriends = [
+    'George',
+    'Jennifer',
+    'Max',
+    'Alex',
+    'Martin',
+    'Jimmy',
+    'Susan',
+    'Frank',
+    'Bob',
+    'Tim',
+];
+
 displayFriends();
 displayMushrooms();
 
@@ -44,13 +57,8 @@ addMushroomButton.addEventListener('click', () => {
 addFriendButton.addEventListener('click', () => {
     const friendName = friendInputEl.value;
 
-    if (!friendName) {
-        friendInputEl.value = 'George';
-        return;
-    }
-
     const newFriend = {
-        name: friendName,
+        name: friendName || defaultFriends[`${Math.floor(Math.random() * 10)}`],
         satisfaction: 1,
     };
 
