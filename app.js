@@ -28,6 +28,7 @@ const friendData = [
 ];
 
 const defaultFriends = [
+    '',
     'George',
     'Jennifer',
     'Max',
@@ -58,7 +59,7 @@ addFriendButton.addEventListener('click', () => {
     const friendName = friendInputEl.value;
 
     const newFriend = {
-        name: friendName || defaultFriends[`${Math.floor(Math.random() * 10)}`],
+        name: friendName || defaultFriends[`${Math.floor(Math.random() * 11)}`],
         satisfaction: 1,
     };
 
