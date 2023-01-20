@@ -59,7 +59,7 @@ addFriendButton.addEventListener('click', () => {
     const friendName = friendInputEl.value;
 
     const newFriend = {
-        name: friendName || defaultFriends[`${Math.floor(Math.random() * 11)}`],
+        name: friendName || defaultFriends[`${Math.floor(Math.random() * 10)}`],
         satisfaction: 1,
     };
 
